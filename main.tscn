@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://82iulmcrd2d6"]
+
+[ext_resource type="PackedScene" uid="uid://d0drk764j5wsj" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://brsv5kj06gj88" path="res://mob_spawner.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cwbudreik3vss" path="res://enemy.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=2077528140]
+
+[node name="CharacterBody2D" parent="." unique_id=1536355526 groups=["player"] instance=ExtResource("1_0xm2m")]
+position = Vector2(161, 187)
+
+[node name="MobSpawner" type="Node2D" parent="." unique_id=702292279]
+position = Vector2(83, 120)
+script = ExtResource("2_h2yge")
+enemy_scene = ExtResource("3_h2yge")
