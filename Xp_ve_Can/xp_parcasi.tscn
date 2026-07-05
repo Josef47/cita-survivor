@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dbig3v16pybr7"]
+
+[ext_resource type="Script" uid="uid://62ltdultucqs" path="res://Xp_ve_Can/xp_parcasi.gd" id="1_gcel2"]
+[ext_resource type="Texture2D" uid="uid://bcqgu5db5sh3i" path="res://Shader/Vector/Tiles/block_coin_active.svg" id="1_kt7du"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcel2"]
+size = Vector2(64, 64)
+
+[node name="Xp_Parcasi" type="Area2D" unique_id=822084862]
+script = ExtResource("1_gcel2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1750189508]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kt7du")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=858596130]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_gcel2")

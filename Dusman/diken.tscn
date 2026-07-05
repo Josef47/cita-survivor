@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ta742uom4sqq"]
+
+[ext_resource type="Script" uid="uid://mql0yqjqyh7b" path="res://Dusman/diken.gd" id="1_fmrh4"]
+[ext_resource type="Texture2D" uid="uid://puxkyykpfh6g" path="res://Shader/Sprites/Tiles/Default/cactus.png" id="2_0n5b7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkc4w"]
+size = Vector2(64, 64)
+
+[node name="Diken" type="Area2D" unique_id=777380397]
+script = ExtResource("1_fmrh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2025798504]
+texture = ExtResource("2_0n5b7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=226329040]
+shape = SubResource("RectangleShape2D_tkc4w")
