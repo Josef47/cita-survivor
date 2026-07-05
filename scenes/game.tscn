@@ -17,12 +17,29 @@ offset_bottom = 44.0
 max_value = 100.0
 value = 100.0
 
+[node name="XpBar" type="ProgressBar" parent="HUD"]
+modulate = Color(0.45, 0.85, 1, 1)
+offset_left = 20.0
+offset_top = 48.0
+offset_right = 240.0
+offset_bottom = 64.0
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
 [node name="KillsLabel" type="Label" parent="HUD"]
 offset_left = 20.0
-offset_top = 52.0
+offset_top = 72.0
 offset_right = 240.0
-offset_bottom = 80.0
+offset_bottom = 100.0
 text = "Kills: 0"
+
+[node name="LevelLabel" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 104.0
+offset_right = 240.0
+offset_bottom = 132.0
+text = "Level: 1"
 
 [node name="GameOverPanel" type="Control" parent="HUD"]
 anchor_right = 1.0

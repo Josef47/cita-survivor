@@ -16,7 +16,9 @@ var _game_over: bool = false
 
 @onready var _spawn_timer: Timer = $SpawnTimer
 @onready var _health_bar: ProgressBar = $HUD/HealthBar
+@onready var _xp_bar: ProgressBar = $HUD/XpBar
 @onready var _kills_label: Label = $HUD/KillsLabel
+@onready var _level_label: Label = $HUD/LevelLabel
 @onready var _game_over_panel: Control = $HUD/GameOverPanel
 
 func _ready() -> void:
@@ -34,6 +36,8 @@ func _spawn_player() -> void:
 	# only assigned once the player node runs _ready().
 	add_child(_player)
 	_player.health.health_changed.connect(_on_player_health_changed)
+	_player.level.xp_changed.connect(_on_player_xp_changed)
+	_player.level.leveled_up.connect(_on_player_leveled_up)
 
 	# Equip the Meteorite Staff item.
 	var staff := STAFF_SCRIPT.new()
@@ -42,6 +46,8 @@ func _spawn_player() -> void:
 
 	_health_bar.max_value = _player.health.max_health
 	_health_bar.value = _player.health.current_health
+	_on_player_xp_changed(_player.level.current_xp, _player.level.xp_to_next)
+	_update_level(_player.level.level)
 	_update_kills()
 
 func _spawn_enemy() -> void:
@@ -68,6 +74,16 @@ func _on_enemy_died(_enemy: Enemy) -> void:
 
 func _on_player_health_changed(current: float, _maximum: float) -> void:
 	_health_bar.value = current
+
+func _on_player_xp_changed(current: float, required: float) -> void:
+	_xp_bar.max_value = required
+	_xp_bar.value = current
+
+func _on_player_leveled_up(new_level: int) -> void:
+	_update_level(new_level)
+
+func _update_level(current_level: int) -> void:
+	_level_label.text = "Level: %d" % current_level
 
 func _on_player_died() -> void:
 	_game_over = true

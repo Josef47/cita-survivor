@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://covdoly3dedml"]
-
-[ext_resource type="Script" uid="uid://d4ecpctiwr1ji" path="res://Dusman/mob_spawner.gd" id="1_ve4g8"]
-[ext_resource type="PackedScene" uid="uid://boxjdrxfq0lt" path="res://Dusman/dusman.tscn" id="2_lhyqq"]
-
-[node name="MobSpawner" type="Node2D" unique_id=727486143]
-script = ExtResource("1_ve4g8")
-enemy_scene = ExtResource("2_lhyqq")
