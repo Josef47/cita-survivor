@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cgm3ni2typ043"]
+
+[ext_resource type="Script" uid="uid://bkaejb26n4m1p" path="res://alev_topu.gd" id="1_1iybv"]
+[ext_resource type="Texture2D" uid="uid://bs1trflulj2b6" path="res://saldiri pixelart/alevtopu.png" id="2_1iybv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni871"]
+size = Vector2(13.451088, 6.3839064)
+
+[node name="AlevTopu" type="Area2D" unique_id=835730864]
+script = ExtResource("1_1iybv")
+speed = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=607190486]
+position = Vector2(2, 0)
+scale = Vector2(1.0625, 1)
+texture = ExtResource("2_1iybv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892088394]
+position = Vector2(-0.9668633, 2.498901)
+rotation = -0.8185594
+shape = SubResource("RectangleShape2D_ni871")
